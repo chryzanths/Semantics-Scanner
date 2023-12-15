@@ -17,34 +17,38 @@ public class SemanticsScanner {
         String alteredInput3 = sourceCode.replaceAll("[ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz,=;]"," ").replaceAll(" ", "");
 
 
-      for (String stringArray : arraySplit1)
-      {
-          if (stringArray.equals("int") && !alteredInput.contains("."))
-          {
-              System.out.println("\nSemantically Correct!");
-              System.out.println(stringArray + alteredInput);
-          }
-          else if (stringArray.equals("double") && alteredInput.contains("."))
-          {
-              System.out.println("\nSemantically Correct!");
-              System.out.println(stringArray + alteredInput);
-          }
-          else if (stringArray.contains("String") && alteredInput3.equals("\"\"") || alteredInput3.equals("“”"))
-          {
-              System.out.println("\nSemantically Correct!");
-              System.out.println(stringArray + alteredInput);
-          }
-          else if (stringArray.contains("char") && alteredInput3.equals("\'\'"))
-          {
-              System.out.println("\nSemantically Correct!");
-          }
-          else
-          {
-              System.out.println("\nSemantically Incorrect!");
-              System.out.println(stringArray + alteredInput3);
-          }
-          break;
-      }
+    for (String stringArray : arraySplit1)
+        {
+            if (stringArray.equals("int") && !alteredInput.contains("."))
+            {
+                System.out.print("\nSemantics: ");
+                System.out.println("Semantically Correct!");
+            }
+            else if (stringArray.equals("double") && alteredInput.contains("."))
+            {
+                System.out.print("\nSemantics: ");
+                System.out.println("Semantically Correct!");
+            }
+            else if (stringArray.contains("String") && alteredInput3.equals("\"\"") || alteredInput3.equals("“”"))
+            {
+                System.out.print("\nSemantics: ");
+                System.out.println("Semantically Correct!");
+            }
+            else if (stringArray.contains("char") && alteredInput3.equals("\'\'"))
+            {
+                System.out.print("\nSemantics: ");
+                System.out.println("Semantically Correct!");
+            }
+            else
+            {
+                System.out.print("\nSemantics: ");
+                System.out.println("Semantically Incorrect!");
+
+                System.out.print("\nReason: ");
+                System.out.println(stringArray + alteredInput3);
+            }
+           break;
+        }
     }
 }
 
